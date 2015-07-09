@@ -1,23 +1,29 @@
 package www.chro.ml.digits;
 
+import android.app.ActionBar;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_splash);
 
 
-
-        TextView tx = (TextView)findViewById(R.id.appName);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/BryantPro-Regular.otf");
+        TextView tx = (TextView) findViewById(R.id.appName);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/BryantPro-Regular.otf");
         tx.setTypeface(custom_font);
     }
 
