@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,10 +22,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash);
 
-
-        TextView tx = (TextView) findViewById(R.id.appName);
+        TextView tx = (TextView) findViewById(R.id.name);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/BryantPro-Regular.otf");
         tx.setTypeface(custom_font);
+        tx.setY(this.getWindow().getDecorView().getHeight()/2 + 50);
+
+        ImageView iv = (ImageView) findViewById(R.id.icon);
+        iv.setY(this.getWindow().getDecorView().getHeight()/2 + 25);
     }
 
     @Override
